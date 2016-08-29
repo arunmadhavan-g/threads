@@ -1,0 +1,27 @@
+apply plugin: 'java'
+
+ext{
+	topic = "default"
+	number = "0"
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+}
+
+
+task init_params(){
+	topic = System.getProperty('topic')
+	number = System.getProperty('number')
+	
+	System.out.println("topic:"+topic+" , number"+number);
+}
+
+task backup(type: Copy, dependsOn:':init_params'){
+	from 'src' 
+	into 'backup/'+topic+"/example"+number
+}
