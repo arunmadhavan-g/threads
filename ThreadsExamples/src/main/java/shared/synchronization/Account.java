@@ -1,3 +1,4 @@
+package shared.synchronization;
 
 public class Account {
 

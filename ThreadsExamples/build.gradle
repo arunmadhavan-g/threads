@@ -15,8 +15,8 @@ dependencies {
 
 
 task init_params(){
-	topic = System.getProperty('topic')
-	number = System.getProperty('number')
+	topic = 'Threads'
+	number = 4
 	
 	System.out.println("topic:"+topic+" , number"+number);
 }
